@@ -48,30 +48,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        var nomeCampo : String!
-        switch  textField {
-        case NomeBarTextField:
-            nomeCampo = "Bar: "
-            break;
-        case EnderecoTextField :
-            nomeCampo = "Endereço: "
-            break;
-        case TelefoneTextFiled:
-            nomeCampo = "Telefone"
-            break;
-        case NotaBarTextField:
-            nomeCampo = "Nota do Bar"
-            break;
-        default:
-            nomeCampo = "OutroCampo: "
-        }
-        let digitando =
-            textField.text!
-        let message = nomeCampo +
-        digitando
-        print (message)
+        updateSaveButtonState()
+        
         return true;
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         updateSaveButtonState()
         navigationItem.title = textField.text
@@ -116,8 +97,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         print(NomeBarTextField.text!)
       }
    
-    @IBAction func saveButton(_ sender: Any) {
-    }
+   
     
     @IBAction func changeImage(_ sender: Any) {
         print("OK")

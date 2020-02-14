@@ -101,8 +101,6 @@ class MealTableViewController: UITableViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var identifier = segue.identifier;
-        print("-------"+identifier!)
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
         case "AddItem":

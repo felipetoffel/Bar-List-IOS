@@ -46,7 +46,7 @@
                                     <outlet property="RtingControl" destination="q3G-mx-hme" id="TXJ-9e-vAB"/>
                                     <outlet property="nameLabel" destination="epS-dC-LYb" id="N6W-eb-QqV"/>
                                     <outlet property="photoImageView" destination="5Df-U7-W29" id="vZd-MA-hYa"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="8Gz-Wf-oQd"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="wrB-mc-0M0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,7 +56,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="ria-LW-fde">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2ap-WP-dzy"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2ap-WP-dzy">
+                            <connections>
+                                <segue destination="2c4-Wn-YZW" kind="show" identifier="AddItem" id="n9U-Xu-EYd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PlM-nS-Lf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,13 +138,8 @@
                                     <outletCollection property="gestureRecognizers" destination="AMO-kC-9Jv" appends="YES" id="DEg-jN-oIr"/>
                                 </connections>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ax5-WG-aFz">
-                                <rect key="frame" x="106" y="540" width="163" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cadastrar"/>
-                            </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qnj-t1-vbT">
-                                <rect key="frame" x="67" y="57" width="240" height="128"/>
+                            <imageView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mestre" translatesAutoresizingMaskIntoConstraints="NO" id="Qnj-t1-vbT">
+                                <rect key="frame" x="67" y="113" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -159,6 +158,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="rPd-eI-LWB">
                             <connections>
+                                <action selector="SaveButton:" destination="BYZ-38-t0r" id="wQ3-ZT-WI3"/>
                                 <segue destination="b2s-Gh-tiM" kind="unwind" unwindAction="unwindToMealListWithSender:" id="nYP-UQ-qP1"/>
                             </connections>
                         </barButtonItem>
@@ -183,7 +183,7 @@
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="AMO-kC-9Jv"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="-5"/>
+            <point key="canvasLocation" x="1775" y="-8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SrC-jl-ud1">
@@ -204,25 +204,28 @@
             <point key="canvasLocation" x="-708" y="-27.436281859070466"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qle-Wl-nMt">
+        <scene sceneID="Vzn-KI-RJR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s7f-cW-yLp" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2c4-Wn-YZW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lvH-Jh-ISQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="maj-l8-eOz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Zp3-Ul-qL5"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Sqz-hL-plc"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NNU-gj-axf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XWh-7O-g35" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="440"/>
+            <point key="canvasLocation" x="1041" y="458"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mestre" width="275" height="183"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Gz-Wf-oQd"/>
+        <segue reference="wrB-mc-0M0"/>
     </inferredMetricsTieBreakers>
 </document>
