@@ -15,31 +15,31 @@ class FoodTrackerTests: XCTestCase {
 // Confirm that the Meal initializer returns a Meal object when passed valid parameters.
 func testMealInitializationSucceeds() {
     // Zero rating
-    let zeroRatingMeal = Bar.init(name: "Zero", photo: nil, rating: 0, Telefone: "zero", Longitude: 0, Latitude: 0 )
+    let zeroRatingMeal = Bar.init(name: "Zero", photo: nil, rating: 0, Telefone: "zero", Longitude: 0, Latitude: 0 , Endereco:"")
     XCTAssertNotNil(zeroRatingMeal)
     
     // Highest positive rating
-    let positiveRatingMeal = Bar.init(name: "Zero", photo: nil, rating: 5, Telefone: "zero", Longitude: 0, Latitude: 0 )
+    let positiveRatingMeal = Bar.init(name: "Zero", photo: nil, rating: 5, Telefone: "zero", Longitude: 0, Latitude: 0, Endereco: "" )
     XCTAssertNotNil(positiveRatingMeal)
 }
     
     // Confirm that the Meal initialier returns nil when passed a negative rating or an empty name.
     func testMealInitializationFails() {
         // Negative rating
-        let negativeRatingMeal = Bar.init(name: "Negative", photo: nil, rating: -1, Telefone: "Zero", Longitude: -1, Latitude: -1)
+        let negativeRatingMeal = Bar.init(name: "Negative", photo: nil, rating: -1, Telefone: "Zero", Longitude: -1, Latitude: -1,Endereco:"")
         XCTAssertNil(negativeRatingMeal)
         
         
         // Rating exceeds maximum
-        let largeRatingMeal = Bar .init(name: "Large", photo: nil,  rating: 6, Telefone: "Zero", Longitude: -1, Latitude: -1)
+        let largeRatingMeal = Bar .init(name: "Large", photo: nil,  rating: 6, Telefone: "Zero", Longitude: -1, Latitude: -1,Endereco:"")
         XCTAssertNil(largeRatingMeal)
         
         // Empty String
-        let emptyStringMeal = Bar.init(name: "", photo: nil, rating: 0, Telefone: "Zero", Longitude: -1, Latitude: -1)
+        let emptyStringMeal = Bar.init(name: "", photo: nil, rating: 0, Telefone: "Zero", Longitude: -1, Latitude: -1,Endereco:"")
         XCTAssertNil(emptyStringMeal)
     }
     func testBarTelefone(){
-        let StringTelefone = Bar.init(name: "", photo: nil, rating: 0, Telefone: "000000000000", Longitude: 1, Latitude: 1)
+        let StringTelefone = Bar.init(name: "", photo: nil, rating: 0, Telefone: "000000000000", Longitude: 1, Latitude: 1,Endereco:"")
         XCTAssertNil(StringTelefone)
     }
 }

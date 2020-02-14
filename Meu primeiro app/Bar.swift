@@ -41,7 +41,6 @@ class Bar: NSObject, NSCoding {
     var Endereco: String
     
     init?(name: String, photo: UIImage?, rating: Int, Telefone: String, Longitude: Float,Latitude: Float,Endereco:String) {
-        
         // Initialization should fail if there is no name or if the rating is negative.
         guard (!name.isEmpty) else {
             return nil
@@ -110,7 +109,7 @@ class Bar: NSObject, NSCoding {
         }
     
         // Must call designated initializer.
-        self.init(name: name, photo: photo, rating: rating,Telefone: Telefone as! String,Longitude: Float(Longitude),Latitude: Float(Latitude),Endereco: Endereco as! String)
+        self.init(name: name, photo: photo, rating: rating,Telefone: Telefone ,Longitude: Float(Longitude),Latitude: Float(Latitude),Endereco: Endereco )
         
     }
 }
