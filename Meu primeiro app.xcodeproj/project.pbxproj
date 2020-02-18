@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB10964423FAB58B0094A10A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10964323FAB58B0094A10A /* MapViewController.swift */; };
+		AB10964823FAD5160094A10A /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10964723FAD5160094A10A /* Artwork.swift */; };
+		AB10964A23FC26EF0094A10A /* ArtworkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10964923FC26EF0094A10A /* ArtworkViews.swift */; };
 		AB4837E623EB00CB003FAF25 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4837E523EB00CB003FAF25 /* MealTableViewController.swift */; };
 		AB7D9DBD23E2F14000D9B90C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D9DBC23E2F14000D9B90C /* AppDelegate.swift */; };
 		AB7D9DBF23E2F14000D9B90C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7D9DBE23E2F14000D9B90C /* ViewController.swift */; };
@@ -38,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB10964323FAB58B0094A10A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AB10964723FAD5160094A10A /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		AB10964923FC26EF0094A10A /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
 		AB4837E523EB00CB003FAF25 /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 		AB7D9DB923E2F14000D9B90C /* Meu primeiro app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meu primeiro app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB7D9DBC23E2F14000D9B90C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,8 @@
 		AB7D9DB023E2F14000D9B90C = {
 			isa = PBXGroup;
 			children = (
+				AB10964723FAD5160094A10A /* Artwork.swift */,
+				AB10964923FC26EF0094A10A /* ArtworkViews.swift */,
 				AB7D9DBB23E2F14000D9B90C /* Meu primeiro app */,
 				AB7D9DD023E2F14300D9B90C /* Meu primeiro appTests */,
 				AB7D9DDB23E2F14300D9B90C /* Meu primeiro appUITests */,
@@ -107,6 +115,7 @@
 			children = (
 				AB7D9DBC23E2F14000D9B90C /* AppDelegate.swift */,
 				AB7D9DBE23E2F14000D9B90C /* ViewController.swift */,
+				AB10964323FAB58B0094A10A /* MapViewController.swift */,
 				AB7D9DEA23E44D5E00D9B90C /* RtingBar.swift */,
 				AB7D9DC023E2F14000D9B90C /* Main.storyboard */,
 				AB4837E523EB00CB003FAF25 /* MealTableViewController.swift */,
@@ -269,11 +278,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7D9DBF23E2F14000D9B90C /* ViewController.swift in Sources */,
+				AB10964A23FC26EF0094A10A /* ArtworkViews.swift in Sources */,
 				ABFDF94D23E8605700C6BA8E /* Bar.swift in Sources */,
+				AB10964823FAD5160094A10A /* Artwork.swift in Sources */,
 				AB7D9DEB23E44D5E00D9B90C /* RtingBar.swift in Sources */,
 				AB7D9DBD23E2F14000D9B90C /* AppDelegate.swift in Sources */,
 				AB4837E623EB00CB003FAF25 /* MealTableViewController.swift in Sources */,
 				ABFDF94F23EAE87400C6BA8E /* MealTableViewCell.swift in Sources */,
+				AB10964423FAB58B0094A10A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

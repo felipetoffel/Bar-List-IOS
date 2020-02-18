@@ -40,7 +40,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             ratingControll.rating = meal.rating
             EnderecoTextField.text = meal.Endereco
             TelefoneTextFiled.text = meal.Telefone
-            
         }
         
         // Enable the Save button only if the text field has a valid Meal name.
