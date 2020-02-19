@@ -11,7 +11,7 @@ import MapKit
 import Contacts
 
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController {
     
     var artworks: [Artwork] = []
     
@@ -22,12 +22,17 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.register(ArtworkViews.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadInitialData()
-        // define a localização inicial em Honolulu
-        let initialLocation = CLLocation (latitude: 21.282778 , longitude: -157.829444 )
+        //define; a localização inicial em Honolulu
+       let initialLocation = CLLocation (latitude:  -26.8918542 , longitude: -49.0655956 )
         centerMapOnLocation(location: initialLocation)
         mapView.delegate = self
-    
+        
         mapView.addAnnotations(artworks)
+        let artwork = Artwork (title: "Moitilas Bar",
+                            locationName: "Rua Santa Quitéria",
+                            discipline: "Bar" ,
+                            coordinate: CLLocationCoordinate2D(latitude: -26.8918542, longitude: -49.0655956))
+        mapView.addAnnotation(artwork)
     }
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -70,7 +75,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
 }
 
-extension ViewController: MKMapViewDelegate {
+extension MapViewController: MKMapViewDelegate {
     // 1
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // 2
@@ -93,7 +98,12 @@ extension ViewController: MKMapViewDelegate {
         return view
     }
     
-    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView,
+                 calloutAccessoryControlTapped control: UIControl) {
+        let location = view.annotation as! Artwork
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        location.mapItem().openInMaps(launchOptions: launchOptions)
+    }
     
     
     
