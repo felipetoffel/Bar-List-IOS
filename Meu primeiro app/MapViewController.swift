@@ -19,7 +19,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.register(ArtworkViews.self,
+        mapView.register(ArtworkMarkerView.self,
                          forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         loadInitialData()
         //define; a localização inicial em Honolulu
@@ -28,11 +28,18 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         
         mapView.addAnnotations(artworks)
-        let artwork = Artwork (title: "Moitilas Bar",
+        let bar1 = Artwork (title: "Moitilas Bar",
                             locationName: "Rua Santa Quitéria",
                             discipline: "Bar" ,
                             coordinate: CLLocationCoordinate2D(latitude: -26.8918542, longitude: -49.0655956))
-        mapView.addAnnotation(artwork)
+        
+        let bar2 = Artwork (title:"Dogão Lanches",
+                              locationName:" Rua Paris",                              discipline:"Lanchonete",coordinate:CLLocationCoordinate2D(latitude: -26.8861998,longitude:-490820582))
+        
+        let bar3 = Artwork (title:"Mega Batata",
+                              locationName:" Rua General Osório",                              discipline:"Lanchonete",coordinate:CLLocationCoordinate2D(latitude: -26.9057364,longitude:-49.1316242))
+        
+        artworks += [bar1,bar2,bar3]
     }
     let regionRadius: CLLocationDistance = 1000
     func centerMapOnLocation(location: CLLocation) {
@@ -75,7 +82,7 @@ class MapViewController: UIViewController {
     }
 }
 
-extension MapViewController: MKMapViewDelegate {
+extension MapViewController: MKMapViewDelegate{
     // 1
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // 2
@@ -104,9 +111,18 @@ extension MapViewController: MKMapViewDelegate {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         location.mapItem().openInMaps(launchOptions: launchOptions)
     }
-    
-    
-    
+    /*func loadBares() {
+        let bares = NSKeyedUnarchiver.unarchiveObject(withFile: Bar.ArchiveURL.path) as? [Bar]
+        
+        for bar in bares! {
+            // exibie a class Atwork no mapa
+            
+            mapView.addAnnotation(bar)
+            
+            // Do any additional setup after loading the view.
+            
+        }
+    }*/
     
     /*
      // MARK: - Navigation

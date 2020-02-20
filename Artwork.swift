@@ -15,6 +15,7 @@ class Artwork: NSObject, MKAnnotation {
     let locationName: String
     let discipline: String
     let coordinate: CLLocationCoordinate2D
+    var imageName = "image"
     
     init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
         self.title = title
@@ -64,15 +65,12 @@ class Artwork: NSObject, MKAnnotation {
             return .cyan
         case "Plaque":
             return .blue
-        case "Sculpture":
+        case "Beer":
             return .purple
         default:
             return .green
         }
     }
-    var imageName: String? {
-        if discipline == "Sculpture" { return "Statue" }
-        return "Flag"
-    }
-    
 }
+    
+
