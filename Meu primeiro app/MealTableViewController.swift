@@ -120,6 +120,8 @@ class MealTableViewController: UITableViewController {
             
             let selectedMeal = meals[indexPath.row]
             mealDetailViewController.meal = selectedMeal
+        case "Showmap":
+            print("maps")
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
@@ -138,5 +140,6 @@ class MealTableViewController: UITableViewController {
     private func loadMeals() -> [Bar]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Bar.ArchiveURL.path) as? [Bar]
     }
+    
     
 }

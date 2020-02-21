@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QSy-Sr-MPb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9lB-ar-vhu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,17 +12,17 @@
         <!--Your Meals-->
         <scene sceneID="Fka-Ai-Ox4">
             <objects>
-                <tableViewController id="ebD-ar-cWt" customClass="MealTableViewController" customModule="Meu_primeiro_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="haN-U0-Fnj">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ebD-ar-cWt" customClass="MealTableViewController" customModule="Meu_primeiro_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="haN-U0-Fnj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BarTableViewCell" rowHeight="90" id="K9T-OD-r4p" customClass="MealTableViewCell" customModule="Meu_primeiro_app" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BarTableViewCell" rowHeight="86" id="K9T-OD-r4p" customClass="MealTableViewCell" customModule="Meu_primeiro_app" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K9T-OD-r4p" id="Pon-JF-yM9" customClass="RtingBar" customModule="Meu_primeiro_app" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="85.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Df-U7-W29">
@@ -55,13 +55,27 @@
                             <outlet property="delegate" destination="ebD-ar-cWt" id="xFu-No-e7i"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Your Meals" id="ria-LW-fde">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2ap-WP-dzy">
-                            <connections>
-                                <segue destination="2c4-Wn-YZW" kind="show" identifier="AddItem" id="n9U-Xu-EYd"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="2ap-WP-dzy">
+                                <connections>
+                                    <segue destination="2c4-Wn-YZW" kind="show" identifier="AddItem" id="n9U-Xu-EYd"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="map" style="plain" id="GPO-fN-GGr">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JaA-BZ-yK3">
+                                    <rect key="frame" x="272.5" y="0.0" width="50" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="map"/>
+                                    <connections>
+                                        <segue destination="QSy-Sr-MPb" kind="show" identifier="Showmap" id="hEA-1L-szU"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PlM-nS-Lf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +210,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OJS-ff-eOM">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wpY-p6-W5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-708" y="-27.436281859070466"/>
+            <point key="canvasLocation" x="-607" y="-523"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vzn-KI-RJR">
@@ -255,6 +269,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="map" width="50" height="50"/>
         <image name="mestre" width="275" height="183"/>
     </resources>
     <inferredMetricsTieBreakers>
